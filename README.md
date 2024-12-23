@@ -1,4 +1,4 @@
-```markdown
+
 # Multimedia App
 
 This project is a React Native application that integrates multimedia features such as audio playback, video playback, and real-time communication through video calls. It uses the Agora SDK for seamless video call functionality.
@@ -83,6 +83,3 @@ Edit `Info.plist`:
 
 - **Mute/Unmute Audio**: Control the microphone during video calls.
 - **Switch Camera**: Toggle between front and rear cameras during video calls.
-
-
-
