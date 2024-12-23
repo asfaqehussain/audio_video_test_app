@@ -1,79 +1,88 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+```markdown
+# Multimedia App
 
-# Getting Started
+This project is a React Native application that integrates multimedia features such as audio playback, video playback, and real-time communication through video calls. It uses the Agora SDK for seamless video call functionality.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Features
 
-## Step 1: Start the Metro Server
+- **Audio Playback**: Play and stop local audio files.
+- **Video Playback**: Play videos with controls for play, pause, and seek.
+- **Video Calls**: Real-time video communication using Agora SDK.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Prerequisites
 
-To start Metro, run the following command from the _root_ of your React Native project:
+1. **Node.js**: Install Node.js from [Node.js Downloads](https://nodejs.org/).
+2. **React Native CLI**: Install globally using:
+   ```bash
+   npm install -g react-native-cli
+   ```
+3. **Android Studio/Xcode**: Set up emulators or physical device testing environments.
+4. **Agora Account**: Sign up at [Agora Console](https://console.agora.io/) and retrieve the App ID.
 
+## Setup Instructions
+
+### Clone the Repository
 ```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+git clone https://github.com/asfaqehussain/audio_video_test_app
+cd multimedia-app
 ```
 
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
+### Install Dependencies
 ```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+npm install
 ```
 
-### For iOS
+### Add Agora App ID
+1. Go to `videocall.js`.
+2. Replace the placeholder `app-id` with your Agora App ID:
+   ```javascript
+   const APP_ID = '43de8f2ab25b4cb4bdbb99c231d09bd8';
+   ```
 
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+### Android Permissions
+Edit `AndroidManifest.xml`:
+```xml
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+### iOS Permissions
+Edit `Info.plist`:
+```xml
+<key>NSCameraUsageDescription</key>
+<string>We need access to your camera for video calls.</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>We need access to your microphone for audio calls.</string>
+```
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+### Running the App
+1. For Android:
+   ```bash
+   npx react-native run-android
+   ```
+2. For iOS:
+   ```bash
+   npx react-native run-ios
+   ```
 
-## Step 3: Modifying your App
+## Screens
 
-Now that you have successfully run the app, let's modify it.
+1. **Home Screen**: Navigate to Audio Player, Video Player, and Call Screen.
+2. **Audio Player**: Play and stop audio files.
+3. **Video Player**: Play video files with playback controls.
+4. **Call Screen**: Join or leave video calls with real-time video communication.
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+## Key Libraries Used
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+- **react-navigation**: For screen navigation.
+- **react-native-sound**: For audio playback.
+- **react-native-video**: For video playback.
+- **react-native-agora**: For real-time video calls.
 
-## Congratulations! :tada:
+## Optional Features
 
-You've successfully run and modified your React Native App. :partying_face:
+- **Mute/Unmute Audio**: Control the microphone during video calls.
+- **Switch Camera**: Toggle between front and rear cameras during video calls.
 
-### Now what?
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
 
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
