@@ -83,3 +83,7 @@ Edit `Info.plist`:
 
 - **Mute/Unmute Audio**: Control the microphone during video calls.
 - **Switch Camera**: Toggle between front and rear cameras during video calls.
+
+## Video attached 
+https://github.com/user-attachments/assets/e0134e7a-9f01-40a6-88c0-eebe26c27ab0
+
