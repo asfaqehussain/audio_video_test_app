@@ -10,6 +10,7 @@ import VideoCall from './src/screens/VideoCall';
 const Stack = createStackNavigator();
 
 const App = () => (
+  //This is the main app
   <NavigationContainer>
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Home" component={Home} />

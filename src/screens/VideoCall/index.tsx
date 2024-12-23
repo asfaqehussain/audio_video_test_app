@@ -11,6 +11,7 @@ const App = () => {
     channel: 'test',
     token: null,
   };
+  //This is the video call screen
   return <AgoraUIKit connectionData={connectionData} />;
 };
 

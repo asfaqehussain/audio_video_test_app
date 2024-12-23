@@ -18,8 +18,15 @@ const VideoPlayerScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {flex: 1, justifyContent: 'center', alignItems: 'center'},
-  video: {width: '100%', height: '50%'},
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  video: {
+    width: '100%',
+    height: '50%',
+  },
 });
 
 export default VideoPlayerScreen;

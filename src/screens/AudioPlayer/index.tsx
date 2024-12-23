@@ -4,8 +4,9 @@ import Sound from 'react-native-sound';
 import CommonButton from '../component/button';
 
 const AudioPlayerScreen = () => {
-  const [sound, setSound] = useState(null);
+  const [sound, setSound] = useState<any>(null);
 
+  //This is the play audio function
   const playAudio = () => {
     const newSound = new Sound('audiofile.mp3', Sound.MAIN_BUNDLE, error => {
       if (error) return console.log('Failed to load sound', error);
@@ -14,6 +15,7 @@ const AudioPlayerScreen = () => {
     setSound(newSound);
   };
 
+  //This is the stop audio function
   const stopAudio = () => {
     if (sound) sound.stop(() => sound.release());
     setSound(null);
@@ -28,7 +30,11 @@ const AudioPlayerScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {flex: 1, justifyContent: 'center', padding: 20},
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: 20,
+  },
 });
 
 export default AudioPlayerScreen;
